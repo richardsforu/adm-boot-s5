@@ -1,13 +1,13 @@
 package com.shop.bill;
 
-import com.shop.pricematrix.PriceMatrixImpl;
+import com.shop.pricematrix.PriceMattrix;
 
 //Dependent
 public class BillingImpl {
 	
-	private PriceMatrixImpl price; // dependency class ref
+	private PriceMattrix price; // dependency class ref
 	
-	public void setPrice(PriceMatrixImpl price) {
+	public void setPrice(PriceMattrix price) {
 		this.price = price;
 	}
 

@@ -2,6 +2,7 @@ package com;
 
 import com.shop.bill.BillingImpl;
 import com.shop.pricematrix.PriceMatrixImpl;
+import com.shop.pricematrix.PriceMattrix;
 
 public class Test {
 
@@ -21,7 +22,7 @@ public class Test {
 
 		// get Dependency class object
 		
-		PriceMatrixImpl price=new PriceMatrixImpl(); // Dependency object
+		PriceMattrix price=new PriceMatrixImpl(); // Dependency object
 
 		// Pass cart object to biller
 
