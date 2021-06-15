@@ -15,12 +15,12 @@ public class Application {
 		
 		ProductRepository prodDao = ac.getBean(ProductRepository.class);
 		
-		//prodDao.findAll().forEach(System.out::println);
+		prodDao.findAll().forEach(System.out::println);
 		
-		Product prod = prodDao.findById(4).orElse(null);
-		prod.setDescription("Samsung A9 8 GB Ram");
-		prodDao.save(prod);
-		System.out.println(prod);
+		//Product prod = prodDao.findById(4).orElse(null);
+		//prod.setDescription("Samsung A9 8 GB Ram");
+		//prodDao.save(prod);
+		//System.out.println(prod);
 		
 	}
 
