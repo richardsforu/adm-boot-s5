@@ -1,11 +1,11 @@
-package com.cts.product.repository;
+package com.cts.pss.repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cts.product.entity.Flight;
+import com.cts.pss.entity.Flight;
 
 public interface FlightRepository extends JpaRepository<Flight, Integer>{
 
