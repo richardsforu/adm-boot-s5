@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.cts.pss.entity.Flight;
+import com.cts.pss.model.SearchQuery;
 
 public interface FlightSearchService {
 	
@@ -14,6 +15,7 @@ public interface FlightSearchService {
 	
 	Flight findById(int id);
 	List<Flight> findAll();
+	List<Flight> findByOriginAndDestinationAndFlightDateV1(SearchQuery query);
 	
 
 }

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="header">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-
 <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
 	rel="stylesheet" media="screen" />
+
+
+
+</head>
 <body class="container">
 
 	<!-- Navigation -->
@@ -20,7 +25,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					
+
 					<li class="nav-item"><a class="nav-link" href="loadForm">Search
 							Flights</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Booking</a>
@@ -31,8 +36,13 @@
 			</div>
 		</div>
 	</nav>
-	
-	<br/> <br/>
+
+
+
+	<br />
+	<br />
+
+
 
 	<div class="">
 		<div class="card">
@@ -42,7 +52,7 @@
 
 			<div class="card-body">
 
-				<form th:action="filterFlightsV2">
+				<form th:action="filterFlightsV2" method="post">
 					<div class="row g-3 mt-3 justify-content-center">
 						<div class="col-3 text-center">
 							<input type="text" class="form-control" placeholder="Depart From"
@@ -57,8 +67,7 @@
 						<div class="col-2">
 							<input type="date" class="form-control"
 								placeholder="Travelling On" aria-label="Traveleling On"
-								name="flightDate"
-								>
+								name="flightDate">
 						</div>
 
 						<div class="col-2">
@@ -90,57 +99,10 @@
 		</div>
 
 	</div>
-	
-	
-	
-	<hr/>
-	
-	
-	<div th:if="${flights != null && flights.size !=0}">
-		
-		<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Flight ID</th>
-      <th>Flight Number</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Flying Date</th>
-      <th>Flying Time</th>
-      <th>Total Duration</th>
-      <th>Ticket Price</th>
-      <th>Available Seats</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr th:each="flight: ${flights}">
-      <td th:text="${flight.id}"></td>
-      <td th:text="${flight.flightNumber}"></td>
-      <td th:text="${flight.origin}"></td>
-      <td th:text="${flight.destination}"></td>
-      <td th:text="${flight.flightDate}"></td>
-      <td th:text="${flight.flightTime}"></td>
-      <td th:text="${flight.duration}"></td>
-      <td th:text="${flight.fare.ticketFare}"></td>
-     <td th:text="${flight.inventory.availableSeats}"></td>
-     <td><button class="btn btn-primary">Book</button></td>
-      
- 
-    </tr>
-  </tbody>
-</table>
-	
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
 
 </body>
 </html>
