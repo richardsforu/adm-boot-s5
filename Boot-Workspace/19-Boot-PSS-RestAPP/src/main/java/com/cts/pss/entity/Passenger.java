@@ -23,7 +23,7 @@ public class Passenger {
 	private long mobileNumber;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToMany(cascade= {CascadeType.ALL,CascadeType.REMOVE},fetch = FetchType.EAGER)
 	@JoinTable(name="copassengers",
 	joinColumns = {@JoinColumn(name="passengerId")},
 	inverseJoinColumns = {@JoinColumn(name="copassengerId")})

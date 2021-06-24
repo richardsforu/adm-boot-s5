@@ -18,7 +18,7 @@ public class FlightInfo {
 	private String flightType;
 	private int seatCapacity;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "airlineId")
 	private AirlineInfo airlineInfo;
 

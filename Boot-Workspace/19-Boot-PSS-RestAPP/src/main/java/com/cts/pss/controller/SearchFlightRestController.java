@@ -30,6 +30,7 @@ public class SearchFlightRestController {
 	// list scheduled flights by query
 	@PostMapping
 	public List<Flight> findFlights(@RequestBody SearchQuery query) {
+		System.out.println(">>>>>>>>>> POSTING <<<<<<<<<");
 		return searchService.findByOriginAndDestinationAndFlightDateV1(query);
 	}
 	
@@ -66,10 +67,10 @@ public class SearchFlightRestController {
 			@PathVariable @DateTimeFormat(iso = ISO.DATE) LocalDate flightDate, @PathVariable String flightNumber) {
 		return searchService.findFareByOriginAndDestinationAndFlightDateAndFlightNumber(origin, destination, flightDate, flightNumber);
 	}
-	
+
 	
 	// schedule new Flight
-	@PostMapping
+	@PostMapping("/newFlight")
 	public Flight scheduleNewFlight(@RequestBody Flight newFlight) {
 		return searchService.scheduleNewFlight(newFlight);
 	}

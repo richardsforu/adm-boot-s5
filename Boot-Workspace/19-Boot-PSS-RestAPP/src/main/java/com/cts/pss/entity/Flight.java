@@ -32,7 +32,7 @@ public class Flight {
 	@JoinColumn(name="inventoryId")
 	private Inventory inventory;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="flightInfoid")
 	private FlightInfo flightInfo;
 	
