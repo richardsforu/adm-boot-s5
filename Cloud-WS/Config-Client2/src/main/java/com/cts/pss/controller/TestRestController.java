@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class TestRestController {
 	
-	@Value("${role.name}")
+//	@Value("${role.name}")
 	private String roleName; 
 	
 	@GetMapping
